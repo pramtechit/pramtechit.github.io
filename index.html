@@ -98,3 +98,36 @@ export default function PramtechIT() {
     </div>
   );
 }
+
+<!-- job-application.html -->
+<section id="job-application" class="job-section">
+  <h1>Job Application Form</h1>
+  <form class="job-form" action="https://formsubmit.co/pramtechitsolutions@gmail.com" method="POST" enctype="multipart/form-data">
+    <label>Full Name</label>
+    <input type="text" required />
+
+    <label>Email</label>
+    <input type="email" required />
+
+    <label>Phone Number</label>
+    <input type="tel" required />
+
+    <label>Position Applying For</label>
+    <select required>
+      <option>Software Developer</option>
+      <option>UI/UX Designer</option>
+      <option>QA Engineer</option>
+      <option>Cloud Engineer</option>
+      <option>Intern</option>
+    </select>
+
+    <label>Upload Resume (PDF)</label>
+    <input type="file" accept="application/pdf" required />
+
+    <label>Cover Letter</label>
+    <textarea rows="5" required></textarea>
+
+    <button type="submit" class="submit-btn">Submit Application</button>
+  </form>
+</section>
+
