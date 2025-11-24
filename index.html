@@ -1,133 +1,85 @@
-import { useState } from "react";
-import { Moon, Sun } from "lucide-react";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pramtech IT Consultancy</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f5f5; }
+        header { background:#1a73e8; color:white; padding:40px 20px; text-align:center; }
+        nav { background:white; box-shadow:0 2px 5px rgba(0,0,0,0.1); padding:10px 20px; text-align:center; }
+        nav a { margin:0 15px; text-decoration:none; color:#333; font-weight:bold; }
+        .section { padding:60px 20px; max-width:900px; margin:auto; background:white; margin-top:20px; border-radius:10px; }
+        h2 { color:#1a73e8; }
+        .services { display:flex; flex-wrap:wrap; gap:20px; }
+        .card { background:#f0f6ff; padding:20px; border-radius:10px; width:calc(33% - 20px); min-width:250px; }
+        footer { margin-top:30px; background:#1a73e8; color:white; text-align:center; padding:20px; }
+        .btn { background:#1a73e8; color:white; padding:12px 22px; display:inline-block; margin-top:10px; border-radius:6px; text-decoration:none; }
+    </style>
+</head>
+<body>
 
-export default function PramtechIT() {
-  const [dark, setDark] = useState(true);
+<header>
+    <h1>Pramtech IT Consultancy</h1>
+    <p>Empowering Businesses with Technology & Digital Solutions</p>
+</header>
 
-  return (
-    <div className={`${dark ? "bg-black text-white" : "bg-white text-black"} min-h-screen font-sans`}>      
-      {/* NAVBAR */}
-      <nav className="w-full flex justify-between items-center px-8 py-4 border-b border-gray-700 sticky top-0 backdrop-blur-md z-50">
-        <div className="text-3xl font-bold tracking-wide">PRAMTECH IT</div>
-        <ul className="hidden md:flex gap-10 text-lg">
-          <li className="hover:text-blue-400 cursor-pointer">Home</li>
-          <li className="hover:text-blue-400 cursor-pointer">Services</li>
-          <li className="hover:text-blue-400 cursor-pointer">Portfolio</li>
-          <li className="hover:text-blue-400 cursor-pointer">Careers</li>
-          <li className="hover:text-blue-400 cursor-pointer">Contact</li>
-        </ul>
-        <button onClick={() => setDark(!dark)} className="p-2 rounded-full border border-gray-600">          
-          {dark ? <Moon /> : <Sun />}        
-        </button>
-      </nav>
+<nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-      {/* HERO SECTION */}
-      <section className="flex flex-col md:flex-row items-center justify-between px-10 md:px-24 py-20">
-        <div>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-6xl font-bold leading-tight">
-            AI Innovations <br /> in <span className="text-blue-500">Digital Solutions</span>
-          </motion.h1>
-          <p className="mt-6 text-lg max-w-xl text-gray-300">
-            Transforming businesses with intelligent automation, cloud infrastructure, app development,
-            IT consulting and next‑gen digital services.
-          </p>
-          <button className="mt-10 px-8 py-3 bg-blue-600 rounded-xl text-lg hover:bg-blue-700 transition-all">Get Started</button>
+<div class="section" id="about">
+    <h2>About Us</h2>
+    <p>
+        Pramtech IT Consultancy is a trusted technology partner for startups and businesses.
+        We deliver reliable IT solutions, software development, cloud migration and digital transformation
+        strategies that help companies grow faster.
+    </p>
+</div>
+
+<div class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">
+            <h3>💻 Custom Software Development</h3>
+            <p>High-quality mobile & web application development.</p>
         </div>
-
-        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} className="mt-12 md:mt-0">
-          <img src="/mnt/data/AI Innovations in Digital Solutions.png" alt="Pramtech Hero" className="w-[480px] rounded-2xl shadow-2xl" />
-        </motion.div>
-      </section>
-
-      {/* SERVICES */}
-      <section className="py-20 px-10 md:px-24">
-        <h2 className="text-4xl font-bold mb-12 text-center">Our Services</h2>
-        <div className="grid md:grid-cols-3 gap-10">
-          {[
-            "AI Automation",
-            "Mobile & Web Development",
-            "Cloud Infrastructure",
-            "Cyber Security",
-            "IT Consulting",
-            "Enterprise Solutions",
-          ].map((item) => (
-            <div key={item} className="p-8 bg-gray-900 rounded-2xl shadow-xl border border-gray-700 hover:border-blue-500 transition-all">
-              <h3 className="text-2xl font-semibold mb-2">{item}</h3>
-              <p className="text-gray-400 text-sm">High‑quality professional services tailored for your business needs with scalable modern technologies.</p>
-            </div>
-          ))}
+        <div class="card">
+            <h3>🌐 Website Development</h3>
+            <p>Responsive, SEO-friendly & fast-performing websites.</p>
         </div>
-      </section>
-
-      {/* PORTFOLIO */}
-      <section className="py-20 px-10 md:px-24 bg-gray-950">
-        <h2 className="text-4xl font-bold mb-12 text-center">Our Portfolio</h2>
-        <div className="grid md:grid-cols-3 gap-10">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className="h-56 bg-gray-800 rounded-2xl border border-gray-700"></div>
-          ))}
+        <div class="card">
+            <h3>☁️ Cloud Services</h3>
+            <p>Cloud setup, migration & DevOps solutions (AWS, Azure, GCP).</p>
         </div>
-      </section>
-
-      {/* CAREERS */}
-      <section className="py-20 px-10 md:px-24">
-        <h2 className="text-4xl font-bold mb-8 text-center">Careers</h2>
-        <p className="text-center max-w-3xl mx-auto text-gray-400 mb-10">
-          Join Pramtech IT and work with cutting‑edge technologies in AI, automation, cloud and scalable software.
-        </p>
-        <div className="text-center">
-          <button className="px-10 py-3 bg-blue-600 rounded-xl text-lg hover:bg-blue-700 transition-all">View Open Positions</button>
+        <div class="card">
+            <h3>🔐 Cybersecurity</h3>
+            <p>Security audits, penetration testing & compliance solutions.</p>
         </div>
-      </section>
-
-      {/* CONTACT */}
-      <section className="py-20 px-10 md:px-24 bg-gray-950">
-        <h2 className="text-4xl font-bold mb-10 text-center">Contact Us</h2>
-        <div className="max-w-3xl mx-auto">
-          <form className="grid gap-6">
-            <input className="p-4 bg-gray-800 rounded-xl border border-gray-700" placeholder="Your Name" />
-            <input className="p-4 bg-gray-800 rounded-xl border border-gray-700" placeholder="Email" />
-            <textarea className="p-4 bg-gray-800 rounded-xl border border-gray-700" placeholder="Message" rows="5" />
-            <button className="px-10 py-3 bg-blue-600 rounded-xl text-lg hover:bg-blue-700 transition-all">Send Message</button>
-          </form>
+        <div class="card">
+            <h3>📊 IT Consulting</h3>
+            <p>Digital strategy, IT planning & infrastructure consulting.</p>
         </div>
-      </section>
-
-      <footer className="py-6 text-center text-gray-500 border-t border-gray-800">© 2025 Pramtech IT Consultancy — All Rights Reserved</footer>
+        <div class="card">
+            <h3>🛠️ Tech Support</h3>
+            <p>24/7 Remote & On-site support for businesses.</p>
+        </div>
     </div>
-  );
-}
+</div>
 
-<!-- job-application.html -->
-<section id="job-application" class="job-section">
-  <h1>Job Application Form</h1>
-  <form class="job-form" action="https://formsubmit.co/pramtechitsolutions@gmail.com" method="POST" enctype="multipart/form-data">
-    <label>Full Name</label>
-    <input type="text" required />
+<div class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p><b>📍 Location:</b> Mancherial</p>
+    <p><b>📞 Phone:</b> +91 XXXXXXXXXX</p>
+    <p><b>📧 Email:</b> pramtechit@gmail.com</p>
+    <a href="mailto:pramtechit@gmail.com" class="btn">Send Message</a>
+</div>
 
-    <label>Email</label>
-    <input type="email" required />
+<footer>
+    © 2025 Pramtech IT Consultancy. All Rights Reserved.
+</footer>
 
-    <label>Phone Number</label>
-    <input type="tel" required />
-
-    <label>Position Applying For</label>
-    <select required>
-      <option>Software Developer</option>
-      <option>UI/UX Designer</option>
-      <option>QA Engineer</option>
-      <option>Cloud Engineer</option>
-      <option>Intern</option>
-    </select>
-
-    <label>Upload Resume (PDF)</label>
-    <input type="file" accept="application/pdf" required />
-
-    <label>Cover Letter</label>
-    <textarea rows="5" required></textarea>
-
-    <button type="submit" class="submit-btn">Submit Application</button>
-  </form>
-</section>
-
+</body>
+</html>
